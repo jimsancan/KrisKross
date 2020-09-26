@@ -42,7 +42,8 @@ const LeftParent = styled.div`
 const LeftSlideIn = styled.div`
     z-index: 1;
     position: absolute;
-    font-size: ${p => p.theme.remSpacing(3)};
+    font-size: ${p => p.theme.remSpacing(3.5)};
+    line-height: 1;
     @media ${device.min.tablet} {
         font-size: ${p => p.theme.remSpacing(5)};
     }
@@ -61,7 +62,8 @@ const LeftSlideIn = styled.div`
 const RightSlideIn = styled.div`
     z-index: 1;
     position: absolute;
-    font-size: ${p => p.theme.remSpacing(3)};
+    font-size: ${p => p.theme.remSpacing(3.5)};
+    line-height: 1;
     @media ${device.min.tablet} {
         font-size: ${p => p.theme.remSpacing(5)};
     }

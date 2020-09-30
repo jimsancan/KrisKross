@@ -8,6 +8,8 @@ const Wrapper = styled.div`
     text-align: center;
     padding: ${p => p.theme.remSpacing(1)};
     margin: ${p => p.theme.remSpacing(1)};
+    min-height: 225px;
+    position: relative;
 `;
 
 const Title = styled.div`
@@ -23,13 +25,20 @@ const Button = styled(SmallerButton)`
     margin-top: ${p => p.theme.remSpacing(.5)};
 `;
 
+const StyledLink = styled(Link)`
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    left: 0;
+`;
+
 const ClassTile = ({ buttonContent, title, time, description }) => {
     return ( 
         <Wrapper>
             <Title>{title}</Title>
             <div>{time}</div>
             <Description>{description}</Description>
-            <Link to="/classes"><Button>{buttonContent}</Button></Link>
+            <StyledLink to="/classes"><Button>{buttonContent}</Button></StyledLink>
         </Wrapper>
     );
 }

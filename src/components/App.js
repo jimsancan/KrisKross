@@ -96,6 +96,23 @@ const ClassesHeader = styled.div`
     margin-top: ${p => p.theme.remSpacing(2)}
 `;
 
+const ClassesSubheaderWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
+const ClassesSubheader = styled.div`
+    text-align: center;
+    width: 80%;
+`;
+
+const ClassesRow = styled(Row)`
+    justify-content: center;
+`;
+
+const bootcampDescription = `Circuit style bootcamp. Most classes have high impact cardio exercises but can be adapted for little to no impact. No equipment - all bodyweight`;
+const bootcampBandsDescription = `Strength training bootcamp with mini resistance bands. No cardio or high impact. Mini bands or weights required - makeshift household items welcome`;
+
 const App = ({ className }) => {
     const [slideRight, setSlideRight] = useState(false);
     const [slideLeft, setSlideLeft] = useState(false);
@@ -134,12 +151,14 @@ const App = ({ className }) => {
                             </div>
                             <About />
                             <ClassesHeader>Classes</ClassesHeader>
+                            <ClassesSubheaderWrapper>
+                                <ClassesSubheader>These classes are designed to meet you at your level. Options are always available and encouraged. Make the workout work for you! Yoga mat, towel, and water are recommended but not required.</ClassesSubheader>
+                            </ClassesSubheaderWrapper>
                             <Container fluid>
-                                <Row>
-                                    <ClassCol sm="12" lg="4"><ClassTile buttonContent="Classes" title="Bootcamp" time="45 min" description="description"/></ClassCol>
-                                    <ClassCol sm="12" lg="4"><ClassTile buttonContent="Classes" title="Bootcamp 101" time="30 min" description="description 101"/></ClassCol>
-                                    <ClassCol sm="12" lg="4"><ClassTile buttonContent="Classes" title="Bootcamp w/ Bands" time="45 min" description="description bands"/></ClassCol>
-                                </Row>
+                                <ClassesRow>
+                                    <ClassCol sm="12" lg="4"><ClassTile buttonContent="Classes" title="Bootcamp" time="45 min" description={bootcampDescription} /></ClassCol>
+                                    <ClassCol sm="12" lg="4"><ClassTile buttonContent="Classes" title="Bootcamp with Bands" time="45 min" description={bootcampBandsDescription} /></ClassCol>
+                                </ClassesRow>
                             </Container>
                         </Wrapper>
                     </Route>
